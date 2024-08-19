@@ -7,6 +7,10 @@
 .display-4 {
     color: #0056b3;
 }
+
+.display-1 {
+    background-color: #0056b3;
+}
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -19,3 +23,20 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
 }
+
+/* UPCOMING EVENT INDEX.HTML SAME HEIGHT  */
+.event-card {
+    height: 100%;
+}
+
+/* BACK TO TOP ARROW  */
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    display: none;
+    z-index: 9999;
+}
+
+
+
