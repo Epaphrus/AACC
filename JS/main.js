@@ -19,4 +19,11 @@ document.addEventListener('DOMContentLoaded', function () {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+
+    // MEMBERSHIP BENEFITS
+    AOS.init({
+        duration: 800,
+        once: true
+    });
+    
 });

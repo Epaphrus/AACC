@@ -43,5 +43,14 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
 }
 
+/* MEMBERSHIP BENEFITS */
+.hover-card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.hover-card:hover {
+    transform: translateY(-10px);
+}
+
 
 
