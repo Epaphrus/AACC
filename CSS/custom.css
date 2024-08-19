@@ -1,0 +1,21 @@
+/* css/custom.css */
+/* Add your custom styles here */
+.navbar-brand {
+    font-weight: bold;
+}
+
+.display-4 {
+    color: #0056b3;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-brand {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
