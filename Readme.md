@@ -32,4 +32,4 @@ Contributions are welcome! Please fork the repository and create a pull request 
 [Add your chosen license here]
 
 ## Contact
-For any inquiries, please contact [Your Contact Information]
+For any inquiries, please contact [@Epaphrus]
