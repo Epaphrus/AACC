@@ -10,6 +10,9 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/custom.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 </head>
 
 <body>
@@ -76,12 +79,12 @@
 
         <section id="events-list" class="py-3">
             <div class="container">
-                <div class="row mb-5" data-aos="fade-up">
-                    <div class="col-md-6">
+                <div class="row mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="200">
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <img src="images/Events/NOV 15.png" alt="CEO Conclave & Investors Dinner 2nd Edition"
                             class="img-fluid rounded">
                     </div>
-                    <div class="col-md-6 pt-2">
+                    <div class="col-md-6 pt-2" data-aos="fade-up" data-aos-delay="400">
                         <h2 class="fw-bold mb-3">CEO Conclave & Investors Dinner 2nd Edition</h2>
                         <p><i class="bi bi-calendar-event me-2"></i>November 15, 2024</p>
                         <p><i class="bi bi-geo-alt me-2"></i>Villa Rosa Kempinski, Nairobi, Kenya</p>
@@ -106,11 +109,11 @@
                     </div>
                 </div>
 
-                <div class="row my-5" data-aos="fade-up">
-                    <div class="col-md-6 order-md-2">
+                <div class="row my-5" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="200">
+                    <div class="col-md-6 order-md-2" data-aos="fade-up" data-aos-delay="200">
                         <img src="images/Events/NOV 15.png" alt="Asia Smart Farming" class="img-fluid rounded">
                     </div>
-                    <div class="col-md-6 pt-2 order-md-1">
+                    <div class="col-md-6 pt-2 order-md-1" data-aos="fade-up" data-aos-delay="400">
                         <h2 class="fw-bold mb-3">Asia Smart Farming</h2>
                         <p><i class="bi bi-calendar-event me-2"></i>October 25th - 27th, 2024</p>
                         <p><i class="bi bi-geo-alt me-2"></i>Kuala Lumpur Convention Centre, Malaysia</p>
@@ -136,9 +139,11 @@
                     </div>
                 </div>
 
-                <!-- Empower Her -->
-                <div class="row mb-5" data-aos="fade-up">
-                    <div class="col-md-6">
+                <div class="row mb-5" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="200">
+                    <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <img src="images/Events/NOV 15.png" alt="Empower Her" class="img-fluid rounded">
+                    </div>
+                    <div class="col-md-6 py-2" data-aos="fade-up" data-aos-delay="400">
                         <h2 class="fw-bold mb-3">Empower Her</h2>
                         <p><i class="bi bi-calendar-event me-2"></i>February 8, 2024</p>
                         <p><i class="bi bi-geo-alt me-2"></i>Nairobi, Kenya</p>
@@ -159,9 +164,6 @@
                             <a href="#" class="btn btn-sm btn-outline-success"><i class="bi bi-linkedin"></i></a>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <img src="images/Events/NOV 15.png" alt="Empower Her" class="img-fluid rounded">
-                    </div>
                 </div>
             </div>
         </section>
@@ -178,7 +180,12 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init();
+        });
 
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
