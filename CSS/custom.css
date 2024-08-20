@@ -52,5 +52,45 @@ h1, h2, h3, h4, h5, h6 {
     transform: translateY(-10px);
 }
 
+/* VISION AND MISSION SECTION  */
+.mission-vision-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.mission-column, .vision-column {
+    position: relative;
+    z-index: 1;
+}
+
+.mission-column::before, .vision-column::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.mission-column::before {
+    background-image: url('path/to/your/mission-background-image.jpg');
+}
+
+.vision-column::before {
+    background-image: url('path/to/your/vision-background-image.jpg');
+}
+
+.content-wrapper {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
 
 
