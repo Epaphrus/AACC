@@ -244,6 +244,72 @@ svg {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* UPCOMING EVENT INDEX.HTML */
+.event-card {
+    transition: all 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.event-card .btn {
+    transition: all 0.3s ease;
+}
+
+.event-card:hover .btn {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+.countdown {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px 0;
+}
+
+.countdown-item {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #007bff;
+}
+.event-card {
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+    border: none;
+}
+
+.event-card .card-body {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+}
+
+.event-card .card-title {
+    color: #2193b0;
+}
+
+.event-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(33, 147, 176, 0.3);
+}
+
+.event-card .btn-primary {
+    background-color: #2193b0;
+    border-color: #2193b0;
+    transition: all 0.3s ease;
+}
+
+.event-card:hover .btn-primary {
+    background-color: #1c7d98;
+    border-color: #1c7d98;
+}
+
+.countdown-item {
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #2193b0;
+}
+
 
 
 

@@ -26,4 +26,36 @@ document.addEventListener('DOMContentLoaded', function () {
         once: true
     });
     
+
+    // UPCOMING EVENTS COUNT DOWN index.HTML
+    const countdownElements = document.querySelectorAll('.countdown');
+
+    countdownElements.forEach(element => {
+        const eventDate = new Date(element.dataset.date).getTime();
+
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            element.innerHTML = `
+                <div class="countdown-item">${days}d</div>
+                <div class="countdown-item">${hours}h</div>
+                <div class="countdown-item">${minutes}m</div>
+                <div class="countdown-item">${seconds}s</div>
+            `;
+
+            if (distance < 0) {
+                clearInterval(interval);
+                element.innerHTML = "Event has started!";
+            }
+        };
+
+        updateCountdown();
+        const interval = setInterval(updateCountdown, 1000);
+    });
 });
