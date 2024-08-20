@@ -222,6 +222,30 @@ svg {
     height: auto;
 }
 
+/* CALL TO ACTION BUTTON  */
+.animated-btn {
+    transition: all 0.3s ease;
+    background: #ffffff;
+}
+
+.animated-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: #ffffff;
+}
+
+.animated-btn:hover .text-primary {
+    color: #ffffff !important;
+}
+
+.animated-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
 
 
 
