@@ -304,11 +304,11 @@ svg {
     border-color: #1c7d98;
 }
 
-.countdown-item {
+/* .countdown-item {
     font-size: 0.9rem;
     font-weight: bold;
     color: #2193b0;
-}
+} */
 .event-category {
     display: inline-block;
     padding: 4px 8px;
