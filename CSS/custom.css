@@ -197,6 +197,26 @@ h1, h2, h3, h4, h5, h6 {
         left: 6px;
     }
 }
+.highlight-hover {
+    transition: all 0.3s ease;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.highlight-hover:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    transform: translateX(5px);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-hover i {
+    transition: all 0.3s ease;
+}
+
+.highlight-hover:hover i {
+    color: #007bff;
+    transform: scale(1.2);
+}
 
 
 
