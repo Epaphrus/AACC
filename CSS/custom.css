@@ -309,6 +309,20 @@ svg {
     font-weight: bold;
     color: #2193b0;
 }
+.event-category {
+    display: inline-block;
+    padding: 4px 8px;
+    background-color: #2193b0;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+.event-icon {
+    font-size: 1.5rem;
+    color: #2193b0;
+}
 
 
 
