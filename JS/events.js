@@ -67,7 +67,7 @@ document.querySelectorAll('.add-to-calendar').forEach(button => {
 // EVENTS MAP SCRIPT 
 function initMap() {
     const map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 2,
+        zoom: 1,
         center: {lat: 0, lng: 0}
     });
 

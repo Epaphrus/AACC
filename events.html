@@ -112,6 +112,19 @@
             border-radius: 8px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
+        #past-events .card {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        #past-events .card:hover {
+            transform: translateY(-5px);
+        }
+
+        #past-events .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
     </style>
 </head>
 
@@ -296,6 +309,98 @@
             <div class="container-fluid">
                 <h2 class="text-center mb-4 fw-bold">Event Locations</h2>
                 <div id="map" style="height: 400px; width: 100%;"></div>
+            </div>
+        </section>
+
+        <!-- PAST EVENTS GO HERE  -->
+        <section id="past-events" class="py-5 bg-light">
+            <div class="container-fluid">
+                <h2 class="text-center mb-5">Past Events</h2>
+                <div class="row">
+                    <!-- Past event cards will go here -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img src="images/past-events/africa-asia-summit-2023.jpg" class="card-img-top"
+                                alt="Africa-Asia Summit 2023">
+                            <div class="card-body">
+                                <h3 class="card-title">Africa-Asia Summit 2023</h3>
+                                <p class="card-text">A groundbreaking conference that brought together leaders from both
+                                    continents to discuss economic cooperation and cultural exchange.</p>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#summitModal">View Gallery</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img src="images/past-events/tech-innovation-forum.jpg" class="card-img-top"
+                                alt="Tech Innovation Forum">
+                            <div class="card-body">
+                                <h3 class="card-title">Tech Innovation Forum</h3>
+                                <p class="card-text">An exciting event showcasing the latest technological advancements
+                                    and startup innovations from Asia and Africa.</p>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#techForumModal">View Gallery</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <img src="images/past-events/cultural-exchange-gala.jpg" class="card-img-top"
+                                alt="Cultural Exchange Gala">
+                            <div class="card-body">
+                                <h3 class="card-title">Cultural Exchange Gala</h3>
+                                <p class="card-text">A vibrant celebration of Asian and African cultures, featuring
+                                    traditional performances, cuisine, and art exhibitions.</p>
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#galaModal">View Gallery</a>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+                <!-- Africa-Asia Summit 2023 Modal -->
+                <div class="modal fade" id="summitModal" tabindex="-1" aria-labelledby="summitModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="summitModalLabel">Africa-Asia Summit 2023 Gallery</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="summitCarousel" class="carousel slide" data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="carousel-item active">
+                                            <img src="images/past-events/summit-1.jpg" class="d-block w-100"
+                                                alt="Summit Image 1">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="images/past-events/summit-2.jpg" class="d-block w-100"
+                                                alt="Summit Image 2">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="images/past-events/summit-3.jpg" class="d-block w-100"
+                                                alt="Summit Image 3">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#summitCarousel"
+                                        data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#summitCarousel"
+                                        data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
