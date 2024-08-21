@@ -25,6 +25,16 @@ function updateCountdown(element, targetDate) {
             <span class="countdown-label">Seconds</span>
         </div>
     `;
+
+    // 'changed' class when the value changes:
+    element.querySelectorAll('.countdown-value').forEach((valueElement, index) => {
+        const newValue = [days, hours, minutes, seconds][index];
+        if (valueElement.textContent !== newValue.toString()) {
+            valueElement.classList.add('changed');
+            setTimeout(() => valueElement.classList.remove('changed'), 500);
+        }
+        valueElement.textContent = newValue;
+    });
 }
 
 // Initialize countdowns
@@ -68,23 +78,23 @@ document.querySelectorAll('.add-to-calendar').forEach(button => {
 function initMap() {
     const map = new google.maps.Map(document.getElementById('map'), {
         zoom: 1,
-        center: {lat: 0, lng: 0}
+        center: { lat: 0, lng: 0 }
     });
 
     const events = [
         {
             name: 'CEO Conclave & Investors Dinner 2nd Edition',
-            location: {lat: -1.2921, lng: 36.8219}, // Nairobi coordinates
+            location: { lat: -1.2921, lng: 36.8219 }, // Nairobi coordinates
             date: 'November 15, 2024'
         },
         {
             name: 'Asia Smart Farming',
-            location: {lat: 3.1390, lng: 101.6869}, // Kuala Lumpur coordinates
+            location: { lat: 3.1390, lng: 101.6869 }, // Kuala Lumpur coordinates
             date: 'October 25th - 27th, 2024'
         },
         {
             name: 'Empower Her',
-            location: {lat: -1.2921, lng: 36.8219}, // Nairobi coordinates
+            location: { lat: -1.2921, lng: 36.8219 }, // Nairobi coordinates
             date: 'February 8, 2025'
         }
     ];
@@ -104,11 +114,35 @@ function initMap() {
             infoWindow.open(map, marker);
         });
     });
+
+    // Enhance map markers:
+    events.forEach(event => {
+        const marker = new google.maps.Marker({
+            position: event.location,
+            map: map,
+            title: event.name,
+            animation: google.maps.Animation.DROP
+        });
+
+        marker.addListener('mouseover', () => {
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+        });
+
+        marker.addListener('mouseout', () => {
+            marker.setAnimation(null);
+        });
+
+        marker.addListener('click', () => {
+            map.setZoom(8);
+            map.setCenter(marker.getPosition());
+            infoWindow.open(map, marker);
+        });
+    });
 }
 
 // SOCIAL MEDIA EVENTS SHARE 
 document.querySelectorAll('.share-event').forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
         const platform = this.getAttribute('data-platform');
         const eventName = this.getAttribute('data-event-name');
         const eventDate = this.getAttribute('data-event-date');
@@ -118,7 +152,7 @@ document.querySelectorAll('.share-event').forEach(button => {
         let shareUrl;
         const message = `Join me at ${eventName} on ${eventDate} at ${eventLocation}. Learn more: `;
 
-        switch(platform) {
+        switch (platform) {
             case 'facebook':
                 shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(eventUrl)}&quote=${encodeURIComponent(message)}`;
                 break;
@@ -131,5 +165,15 @@ document.querySelectorAll('.share-event').forEach(button => {
         }
 
         window.open(shareUrl, '_blank', 'width=600,height=400');
+    });
+});
+
+// Implement smooth scrolling:
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
 });

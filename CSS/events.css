@@ -1,0 +1,135 @@
+.countdown-container {
+    text-align: center;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.countdown-item {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 10px;
+    min-width: 60px;
+}
+
+.countdown-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+}
+
+.countdown-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#past-events .card {
+    transition: transform 0.3s ease-in-out;
+}
+
+#past-events .card:hover {
+    transform: translateY(-5px);
+}
+
+#past-events .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.social-share .btn {
+    transition: all 0.3s ease;
+}
+
+.social-share .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.social-share .btn-outline-primary:hover {
+    background-color: #3b5998;
+    border-color: #3b5998;
+}
+
+.social-share .btn-outline-info:hover {
+    background-color: #1da1f2;
+    border-color: #1da1f2;
+}
+
+.social-share .btn-outline-success:hover {
+    background-color: #0077b5;
+    border-color: #0077b5;
+}
+
+/* hover effects on event cards: */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Animate the countdown timer: */
+.countdown-value {
+    transition: all 0.5s;
+}
+
+.countdown-value.changed {
+    animation: flipNumber 0.5s;
+}
+
+@keyframes flipNumber {
+    0% { transform: rotateX(0deg); }
+    50% { transform: rotateX(90deg); }
+    100% { transform: rotateX(0deg); }
+}
+
+/* Add ripple effect to "Register Now" buttons: */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 1;
+    }
+    20% {
+        transform: scale(25, 25);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(40, 40);
+    }
+}
+
+.btn-primary:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+}
