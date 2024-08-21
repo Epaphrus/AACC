@@ -105,3 +105,31 @@ function initMap() {
         });
     });
 }
+
+// SOCIAL MEDIA EVENTS SHARE 
+document.querySelectorAll('.share-event').forEach(button => {
+    button.addEventListener('click', function() {
+        const platform = this.getAttribute('data-platform');
+        const eventName = this.getAttribute('data-event-name');
+        const eventDate = this.getAttribute('data-event-date');
+        const eventLocation = this.getAttribute('data-event-location');
+        const eventUrl = window.location.href;
+
+        let shareUrl;
+        const message = `Join me at ${eventName} on ${eventDate} at ${eventLocation}. Learn more: `;
+
+        switch(platform) {
+            case 'facebook':
+                shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(eventUrl)}&quote=${encodeURIComponent(message)}`;
+                break;
+            case 'twitter':
+                shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(message)}&url=${encodeURIComponent(eventUrl)}`;
+                break;
+            case 'linkedin':
+                shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(eventUrl)}&title=${encodeURIComponent(eventName)}&summary=${encodeURIComponent(message)}`;
+                break;
+        }
+
+        window.open(shareUrl, '_blank', 'width=600,height=400');
+    });
+});
