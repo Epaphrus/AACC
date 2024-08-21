@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="css/custom.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsn5zzLwQN09igwDKw6Y2kTENXpK1m8bA&callback=initMap"
+        async defer></script>
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -102,6 +104,13 @@
         .countdown-label {
             font-size: 0.8rem;
             text-transform: uppercase;
+        }
+
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -281,6 +290,12 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section id="event-map" class="py-5">
+            <div class="container-fluid">
+                <h2 class="text-center mb-4 fw-bold">Event Locations</h2>
+                <div id="map" style="height: 400px; width: 100%;"></div>
             </div>
         </section>
     </main>

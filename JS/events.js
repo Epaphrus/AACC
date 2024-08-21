@@ -64,3 +64,44 @@ document.querySelectorAll('.add-to-calendar').forEach(button => {
     button.addEventListener('click', addToCalendar);
 });
 
+// EVENTS MAP SCRIPT 
+function initMap() {
+    const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 2,
+        center: {lat: 0, lng: 0}
+    });
+
+    const events = [
+        {
+            name: 'CEO Conclave & Investors Dinner 2nd Edition',
+            location: {lat: -1.2921, lng: 36.8219}, // Nairobi coordinates
+            date: 'November 15, 2024'
+        },
+        {
+            name: 'Asia Smart Farming',
+            location: {lat: 3.1390, lng: 101.6869}, // Kuala Lumpur coordinates
+            date: 'October 25th - 27th, 2024'
+        },
+        {
+            name: 'Empower Her',
+            location: {lat: -1.2921, lng: 36.8219}, // Nairobi coordinates
+            date: 'February 8, 2025'
+        }
+    ];
+
+    events.forEach(event => {
+        const marker = new google.maps.Marker({
+            position: event.location,
+            map: map,
+            title: event.name
+        });
+
+        const infoWindow = new google.maps.InfoWindow({
+            content: `<h3>${event.name}</h3><p>${event.date}</p>`
+        });
+
+        marker.addListener('click', () => {
+            infoWindow.open(map, marker);
+        });
+    });
+}
