@@ -1,0 +1,28 @@
+.hero-section {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+.hero-section h1 {
+    color: #333;
+    font-size: 3.5rem;
+}
+
+.hero-section .lead {
+    color: #666;
+    font-size: 1.25rem;
+}
+
+.hero-section .btn-lg {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+}
+
+.hero-section .carousel-inner {
+    height: 400px;
+}
+
+.hero-section .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+}
