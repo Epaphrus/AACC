@@ -84,7 +84,7 @@ function initMap() {
     const events = [
         {
             name: 'CEO Conclave & Investors Dinner 2nd Edition',
-            location: { lat: -1.2921, lng: 36.8219 }, // Nairobi coordinates
+            location: { lat: -1.271728, lng: 36.808946 }, // Nairobi coordinates
             date: 'November 15, 2024'
         },
         {
