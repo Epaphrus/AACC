@@ -20,12 +20,25 @@ document.addEventListener('DOMContentLoaded', function () {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
+    // Smooth scroll for back-to-top button
+    const backToTopButton = document.getElementById('back-to-top');
+    if (backToTopButton) {
+        backToTopButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+
     // MEMBERSHIP BENEFITS
     AOS.init({
         duration: 800,
         once: true
     });
-    
+
 
     // UPCOMING EVENTS COUNT DOWN index.HTML
     // const countdownElements = document.querySelectorAll('.countdown');
@@ -61,32 +74,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateCountdown() {
         const countdownElements = document.querySelectorAll('.countdown');
-        
+
         countdownElements.forEach(element => {
             const eventDate = new Date(element.dataset.date).getTime();
             const now = new Date().getTime();
             const distance = eventDate - now;
-    
+
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
+
             element.innerHTML = `
                 <div class="countdown-item">${days}d</div>
                 <div class="countdown-item">${hours}h</div>
                 <div class="countdown-item">${minutes}m</div>
                 <div class="countdown-item">${seconds}s</div>
             `;
-    
+
             if (distance < 0) {
                 element.innerHTML = "Event has started!";
             }
         });
     }
-    
+
     // Call the function immediately and then set interval
     updateCountdown();
     setInterval(updateCountdown, 1000);
-        
+
 });
