@@ -68,164 +68,115 @@
     </nav>
 
     <main class="container py-5">
-        <h1 class="mb-5 fw-semibold">Membership Application</h1>
-
-        <div class="row">
-            <div class="col-md-8">
-                <form id="membershipForm" class="row g-3">
-                    <h2>Entity Information</h2>
-                    <div class="col-md-6">
-                        <label for="applyingEntity" class="form-label">Applying Entity</label>
-                        <input type="text" class="form-control" id="applyingEntity" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="businessCategory" class="form-label">Business Category</label>
-                        <input type="text" class="form-control" id="businessCategory" required>
-                    </div>
-                    <div class="col-12">
-                        <label for="mailingAddress" class="form-label">Mailing Address</label>
-                        <input type="text" class="form-control" id="mailingAddress" required>
-                    </div>
-                    <div class="col-12">
-                        <label for="physicalAddress1" class="form-label">Physical Address: Address Line 1</label>
-                        <input type="text" class="form-control" id="physicalAddress1" required>
-                    </div>
-                    <div class="col-12">
-                        <label for="physicalAddress2" class="form-label">Address Line 2</label>
-                        <input type="text" class="form-control" id="physicalAddress2">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="city" class="form-label">City</label>
-                        <input type="text" class="form-control" id="city" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="country" class="form-label">Country</label>
-                        <input type="text" class="form-control" id="country" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="phone" class="form-label">Phone</label>
-                        <input type="tel" class="form-control" id="phone" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="generalMail" class="form-label">General Mail</label>
-                        <input type="email" class="form-control" id="generalMail" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="marketingMail" class="form-label">Marketing Mail</label>
-                        <input type="email" class="form-control" id="marketingMail">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="employees" class="form-label">Number of Employees</label>
-                        <input type="number" class="form-control" id="employees" required>
-                    </div>
-                    <div class="col-12">
-                        <label for="website" class="form-label">Website URL</label>
-                        <input type="url" class="form-control" id="website">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="membershipPackage" class="form-label">Select Membership Package</label>
-                        <select class="form-select" id="membershipPackage" required>
-                            <option value="">Choose...</option>
-                            <option value="basic">Basic</option>
-                            <option value="premium">Premium</option>
-                            <option value="executive">Executive</option>
-                        </select>
-                    </div>
-                    <div class="col-12">
-                        <label for="joiningReason" class="form-label">Reason(s) for Joining AACC</label>
-                        <textarea class="form-control" id="joiningReason" rows="3" required></textarea>
-                    </div>
-
-                    <h2>Representative Information</h2>
-                    <div class="col-md-4">
-                        <label for="firstName" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="firstName" required>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="middleName" class="form-label">Middle Name</label>
-                        <input type="text" class="form-control" id="middleName">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="lastName" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="repPhone" class="form-label">Phone</label>
-                        <input type="tel" class="form-control" id="repPhone" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="repEmail" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="repEmail" required>
-                    </div>
-                    <div class="col-12">
-                        <label for="position" class="form-label">Position</label>
-                        <input type="text" class="form-control" id="position" required>
-                    </div>
-                    <div class="col-12">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="certify" required>
-                            <label class="form-check-label" for="certify">
-                                I CERTIFY THAT ALL ANSWERS GIVEN HEREIN ARE TRUE AND COMPLETE TO THE BEST OF MY
-                                KNOWLEDGE.
-                            </label>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary">Submit Application</button>
-                    </div>
-                </form>
-
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        Membership Fees
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Individual: $100/year</li>
-                        <li class="list-group-item">Corporate: $500/year</li>
-                    </ul>
+        <section>
+            <h1 class="mb-5 fw-semibold">Membership Application</h1>
+            <form id="membershipForm" class="row g-3">
+                <h2>Entity Information</h2>
+                <div class="col-md-6">
+                    <label for="applyingEntity" class="form-label">Applying Entity</label>
+                    <input type="text" class="form-control" id="applyingEntity" required>
                 </div>
-                <div class="card">
-                    <div class="card-header">
-                        Terms & Conditions
-                    </div>
-                    <div class="card-body">
-                        <h5>1. Membership Eligibility</h5>
-                        <p>Membership in the AACC is open to businesses, organizations, and individuals operating in Asia and Africa or having business interests in these regions. The AACC reserves the right to reject or terminate membership applications at its discretion.</p>
-                
-                        <h5>2. Membership Benefits</h5>
-                        <p>As a member of the AACC, you will have access to networking events, workshops, seminars, and other opportunities aimed at fostering business growth and development. You will receive updates on market trends, economic insights, and industry-specific information to aid your business decision-making process. The AACC may provide special offers, discounts, or promotional opportunities for members on products and services from selected partners.</p>
-                
-                        <h5>3. Membership Fees</h5>
-                        <p>Membership fees are payable annually or as per the agreed terms during the application process. The AACC reserves the right to revise membership fees with prior notice to existing members.</p>
-                
-                        <h5>4. Member Conduct</h5>
-                        <p>Members are expected to maintain professionalism, honesty, and integrity while representing the AACC or participating in its events and activities. Discrimination, harassment, or any form of unethical behavior will not be tolerated and may lead to membership termination.</p>
-                
-                        <h5>5. Intellectual Property</h5>
-                        <p>The AACC retains all rights to its intellectual property, including but not limited to its name, logo, website content, and publications. Members must not use the AACC's intellectual property without explicit written permission.</p>
-                
-                        <h5>6. Privacy and Data Protection</h5>
-                        <p>The AACC will collect and process personal information in accordance with its privacy policy. By joining as a member, you consent to such data processing. Members are responsible for ensuring the accuracy and confidentiality of their personal information provided to the AACC.</p>
-                
-                        <h5>7. Termination of Membership</h5>
-                        <p>7.1. Cancellation of membership has to be made in writing latest 30 days before the end of a contribution year. Unless such notice of intention is given, any subscription is payable in full latest two weeks after the beginning of the next contribution year. The member is not entitled to any refund, in full or part, of any annual subscription paid.</p>
-                        <p>7.2. The AACC shall not be liable for any direct, indirect, or consequential damages arising from your membership or use of its services.</p>
-                        <p>7.3. The AACC does not guarantee the accuracy, completeness, or reliability of information provided by members or third parties.</p>
-                
-                        <h5>8. Governing Law</h5>
-                        <p>These terms and conditions shall be governed by and construed in accordance with the laws of Kenya. Any disputes arising from or related to these terms and conditions shall be subject to the exclusive jurisdiction of the courts of Kenya.</p>
+                <div class="col-md-6">
+                    <label for="businessCategory" class="form-label">Business Category</label>
+                    <input type="text" class="form-control" id="businessCategory" required>
+                </div>
+                <div class="col-12">
+                    <label for="mailingAddress" class="form-label">Mailing Address</label>
+                    <input type="text" class="form-control" id="mailingAddress" required>
+                </div>
+                <div class="col-12">
+                    <label for="physicalAddress1" class="form-label">Physical Address: Address Line 1</label>
+                    <input type="text" class="form-control" id="physicalAddress1" required>
+                </div>
+                <div class="col-12">
+                    <label for="physicalAddress2" class="form-label">Address Line 2</label>
+                    <input type="text" class="form-control" id="physicalAddress2">
+                </div>
+                <div class="col-md-6">
+                    <label for="city" class="form-label">City</label>
+                    <input type="text" class="form-control" id="city" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="country" class="form-label">Country</label>
+                    <input type="text" class="form-control" id="country" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="tel" class="form-control" id="phone" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="generalMail" class="form-label">General Mail</label>
+                    <input type="email" class="form-control" id="generalMail" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="marketingMail" class="form-label">Marketing Mail</label>
+                    <input type="email" class="form-control" id="marketingMail">
+                </div>
+                <div class="col-md-6">
+                    <label for="employees" class="form-label">Number of Employees</label>
+                    <input type="number" class="form-control" id="employees" required>
+                </div>
+                <div class="col-12">
+                    <label for="website" class="form-label">Website URL</label>
+                    <input type="url" class="form-control" id="website">
+                </div>
+                <div class="col-md-6">
+                    <label for="membershipPackage" class="form-label">Select Membership Package</label>
+                    <select class="form-select" id="membershipPackage" required>
+                        <option value="">Choose...</option>
+                        <option value="basic">Basic</option>
+                        <option value="premium">Premium</option>
+                        <option value="executive">Executive</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label for="joiningReason" class="form-label">Reason(s) for Joining AACC</label>
+                    <textarea class="form-control" id="joiningReason" rows="3" required></textarea>
+                </div>
+
+                <h2>Representative Information</h2>
+                <div class="col-md-4">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="middleName" class="form-label">Middle Name</label>
+                    <input type="text" class="form-control" id="middleName">
+                </div>
+                <div class="col-md-4">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="repPhone" class="form-label">Phone</label>
+                    <input type="tel" class="form-control" id="repPhone" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="repEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="repEmail" required>
+                </div>
+                <div class="col-12">
+                    <label for="position" class="form-label">Position</label>
+                    <input type="text" class="form-control" id="position" required>
+                </div>
+                <div class="col-12">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="certify" required>
+                        <label class="form-check-label" for="certify">
+                            I CERTIFY THAT ALL ANSWERS GIVEN HEREIN ARE TRUE AND COMPLETE TO THE BEST OF MY
+                            KNOWLEDGE.
+                        </label>
                     </div>
                 </div>
-                
-            </div>
-        </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Submit Application</button>
+                </div>
+            </form>
 
-
-        <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button"><i
-                class="bi bi-arrow-up"></i>
-        </a>
+            <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button"><i
+                    class="bi bi-arrow-up"></i>
+            </a>
+        </section>
     </main>
 
     <footer class="bg-dark text-light py-3">
