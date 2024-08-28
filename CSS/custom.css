@@ -407,3 +407,23 @@ svg {
     text-align: center;
     font-weight: bold;
 }
+.gallery-item {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    backface-visibility: hidden;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05) rotate(1deg);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.gallery-item img {
+    transition: filter 0.4s ease-out;
+}
+
+.gallery-item:hover img {
+    filter: brightness(1.1) contrast(1.1);
+}
+
