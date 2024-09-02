@@ -100,6 +100,5 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Call the function immediately and then set interval
     updateCountdown();
-    setInterval(updateCountdown, 1000);
-
+    setInterval(updateCountdown, 1000);    
 });

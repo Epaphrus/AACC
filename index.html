@@ -14,7 +14,12 @@
     <link rel="stylesheet" href="css/custom.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://www.webglearth.com/v2/api.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeO8dWp9Ix1fK39frscKRm0i6r9xSbrfY"></script>
+
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -87,7 +92,27 @@
 
     <main>
         <!-- HERO SECTION CODE  -->
-        <section id="home" class="hero-section py-5">
+        <section class="hero position-relative overflow-hidden">
+            <div class="container">
+                <div class="row align-items-center my-5 py-3">
+                    <div class="col-lg-6">
+                        <h1 class="display-4 fw-bold mb-4">Bridging Continents, Fostering Trade</h1>
+                        <p class="lead mb-4">Uniting businesses across Asia and Africa for mutual growth and prosperity.
+                        </p>
+                        <div class="d-flex gap-3">
+                            <a href="membership.html" class="btn btn-primary btn-lg fs-6 rounded-5">Become a Member</a>
+                            <a href="events.html" class="btn btn-outline-secondary btn-lg fs-6 rounded-5">Explore
+                                Events</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ">
+                        <div id="globe-container" class="position-relative"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section id="home" class="hero-section py-5">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-6 mb-4 mb-lg-0">
@@ -133,7 +158,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- <section id="home" class="container py-3">
             <div class="row equal-height-row">
@@ -272,7 +297,7 @@
                 </p>
                 <a href="membership.html" class="btn btn-light btn-lg rounded-5 animated-btn" data-aos="zoom-in"
                     data-aos-delay="600">
-                    <p class="m-0 fw-bold fs-5 text-primary">
+                    <p class="m-0 fw-bold fs-6 text-primary">
                         Apply for Membership <i class="bi bi-arrow-right"></i>
                     </p>
                 </a>
@@ -827,10 +852,13 @@
         document.addEventListener('DOMContentLoaded', function () {
             AOS.init();
         });
-
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/controls/OrbitControls.min.js"></script>
+    <script src="js/globe.js"></script>
+
 </body>
 
 </html>
