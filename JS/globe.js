@@ -1,182 +1,79 @@
-/**
- * Globe class for creating an interactive 3D globe visualization
- * using WebGL Earth to display member locations and trade routes.
- */
-class Globe {
-    /**
-     * Create a new Globe instance.
-     * @param {HTMLElement} container - The DOM element to render the globe in.
-     */
-    constructor(container) {
-        this.container = container;
-        this.earth = null;
-        this.members = [];
-        this.tradeRoutes = [];
-        this.dataUpdateInterval = null;
+document.addEventListener('DOMContentLoaded', function () {
+    am5.ready(function () {
 
-        this.init();
-    }
+        // Create root element
+        // https://www.amcharts.com/docs/v5/getting-started/#Root_element
+        var root = am5.Root.new("chartdiv");
 
-    /**
-     * Initialize the globe and set up necessary components.
-     */
-    init() {
-        this.createGlobe();
-        this.startRotation();
-        this.startRealTimeUpdates();
-    }    
 
-    /**
-     * Create the 3D globe using WebGL Earth.
-     */
-    createGlobe() {
-        this.earth = new WE.map(this.container, {
-            sky: true,
-            atmosphere: true
+        // Set themes
+        // https://www.amcharts.com/docs/v5/concepts/themes/
+        root.setThemes([
+            am5themes_Animated.new(root)
+        ]);
+
+
+        // Create the map chart
+        // https://www.amcharts.com/docs/v5/charts/map-chart/
+        var chart = root.container.children.push(am5map.MapChart.new(root, {
+            panX: "rotateX",
+            panY: "rotateY",
+            projection: am5map.geoOrthographic(),
+            paddingBottom: 20,
+            paddingTop: 20,
+            paddingLeft: 20,
+            paddingRight: 20
+        }));
+
+
+        // Create main polygon series for countries
+        // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/
+        var polygonSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {
+            geoJSON: am5geodata_worldLow
+        }));
+
+        polygonSeries.mapPolygons.template.setAll({
+            tooltipText: "{name}",
+            toggleKey: "active",
+            interactive: true
         });
 
-        WE.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(this.earth);
-
-        this.earth.setView([20, 0], 2.5);
-    }
-
-    /**
-     * Start the continuous rotation of the globe.
-     */
-    startRotation() {
-        const rotationSpeed = 0.1; // Adjust this value to change rotation speed
-        let lastTime = Date.now();
-    
-        const animate = () => {
-            const currentTime = Date.now();
-            const deltaTime = currentTime - lastTime;
-            lastTime = currentTime;
-    
-            const center = this.earth.getCenter();
-            center[0] += rotationSpeed * (deltaTime / 1000);
-            if (center[0] > 180) center[0] -= 360;
-            this.earth.setCenter(center);
-    
-            requestAnimationFrame(animate);
-        };
-    
-        animate();
-    }
-    
-
-    /**
-     * Fetch member data from the API.
-     * @returns {Promise<Array>} A promise that resolves to an array of member data.
-     */
-    async fetchMemberData() {
-        const response = await fetch('https://api.asiaafrica-chamber.com/members');
-        const data = await response.json();
-        return data;
-    }
-
-    /**
-     * Load member data and update the globe visualization.
-     */
-    async loadMemberData() {
-        this.showLoadingIndicator();
-        const memberData = await this.fetchMemberData();
-        this.clearExistingData();
-        memberData.forEach(member => {
-            this.addMember(member);
+        polygonSeries.mapPolygons.template.states.create("hover", {
+            fill: root.interfaceColors.get("primaryButtonHover")
         });
-        this.createTradeRoutes();
-        this.hideLoadingIndicator();
-    }
 
-    /**
-     * Clear existing member and trade route data from the globe.
-     */
-    clearExistingData() {
-        this.members.forEach(member => this.earth.removeMarker(member));
-        this.members = [];
-        this.tradeRoutes.forEach(route => this.earth.removePolyline(route));
-        this.tradeRoutes = [];
-    }
 
-    /**
-     * Add a member to the globe visualization.
-     * @param {Object} member - The member data object.
-     */
-    addMember(member) {
-        const marker = WE.marker([member.lat, member.lon]).addTo(this.earth);
-        marker.bindPopup(`<h3>${member.name}</h3><p>${member.description}</p>`);
-        this.members.push(marker);
-    }
+        // Create series for background fill
+        // https://www.amcharts.com/docs/v5/charts/map-chart/map-polygon-series/#Background_polygon
+        var backgroundSeries = chart.series.push(am5map.MapPolygonSeries.new(root, {}));
+        backgroundSeries.mapPolygons.template.setAll({
+            fill: root.interfaceColors.get("alternativeBackground"),
+            fillOpacity: 0.1,
+            strokeOpacity: 0
+        });
+        backgroundSeries.data.push({
+            geometry: am5map.getGeoRectangle(90, 180, -90, -180)
+        });
 
-    /**
-     * Create trade routes between members.
-     */
-    createTradeRoutes() {
-        for (let i = 0; i < this.members.length; i++) {
-            for (let j = i + 1; j < this.members.length; j++) {
-                const start = this.members[i].getPosition();
-                const end = this.members[j].getPosition();
 
-                const line = WE.polyline([
-                    [start.lat, start.lng],
-                    [end.lat, end.lng]
-                ], {color: '#00ff00', opacity: 0.5, width: 2}).addTo(this.earth);
+        // Create graticule series
+        // https://www.amcharts.com/docs/v5/charts/map-chart/graticule-series/
+        var graticuleSeries = chart.series.push(am5map.GraticuleSeries.new(root, {}));
+        graticuleSeries.mapLines.template.setAll({ strokeOpacity: 0.1, stroke: root.interfaceColors.get("alternativeBackground") })
 
-                this.tradeRoutes.push(line);
-            }
-        }
-    }
 
-    /**
-     * Start real-time updates of member data.
-     */
-    startRealTimeUpdates() {
-        this.loadMemberData(); // Initial load
-        this.dataUpdateInterval = setInterval(() => {
-            this.loadMemberData();
-        }, 60000); // Update every minute
-    }
+        // Rotate animation
+        chart.animate({
+            key: "rotationX",
+            from: 0,
+            to: 360,
+            duration: 30000,
+            loops: Infinity
+        });
 
-    /**
-     * Stop real-time updates of member data.
-     */
-    stopRealTimeUpdates() {
-        if (this.dataUpdateInterval) {
-            clearInterval(this.dataUpdateInterval);
-        }
-    }
 
-    /**
-     * Show loading indicator while updating data.
-     */
-    showLoadingIndicator() {
-        let loadingDiv = document.getElementById('globe-loading');
-        if (!loadingDiv) {
-            loadingDiv = document.createElement('div');
-            loadingDiv.id = 'globe-loading';
-            this.container.appendChild(loadingDiv);
-        }
-        loadingDiv.textContent = 'Updating data...';
-        loadingDiv.style.display = 'block';
-    }
+        // Make stuff animate on load
+        chart.appear(1000, 100);
 
-    /**
-     * Hide loading indicator after data update.
-     */
-    hideLoadingIndicator() {
-        const loadingDiv = document.getElementById('globe-loading');
-        if (loadingDiv) {
-            loadingDiv.style.display = 'none';
-        }
-    }
-}
-
-// Initialize the globe when the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('globe-container');
-    if (container) {
-        new Globe(container);
-    }
+    }); // end am5.ready()
 });
