@@ -7,9 +7,8 @@
     <meta name="description"
         content="Meet the executive board of the Asia Africa Chamber of Commerce. Our diverse leadership team is committed to fostering economic cooperation and growth between Asia and Africa.">
     <title>Executive Board - Asia Africa Chamber of Commerce</title>
+    <link rel="stylesheet" href="css/general.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap"
-        rel="stylesheet">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -47,12 +46,81 @@
           }
         }
         </script>
+    <style>
+        .hero-section {
+            position: relative;
+            background-image: url('/images/Hero/corp.avif');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0;
+            color: #fff;
+        }
 
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .hero-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .hero-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .hero-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 
 <body>
-    <div class="bg-primary pt-4">
-    </div>
+    <section class="bg-primary py-1">
+        <div class="container text-white">
+            <div class="d-flex justify-content-between">
+                <p id="topNav" class="p-0 m-0"><i class="bi bi-envelope-fill"></i> <span id="text">Write to us:
+                        info@asiaafrika.org</span></p>
+                <p id="topNav" class="p-0 m-0"><i class="bi bi-telephone-fill"></i> <span id="text">Call us today: +254
+                        712 885 069</span></p>
+                <p id="topNav" class="p-0 m-0"><i class="bi bi-geo-alt-fill"></i> <span id="text">Visit Our Offices:
+                        Mpaka House - Nairobi, Kenya.</span></p>
+                <p id="topNav" class="p-0 m-0"><i class="bi bi-facebook"></i> <i class="bi bi-twitter"></i> <i
+                        class="bi bi-linkedin"></i> <i class="bi bi-instagram"></i></p>
+            </div>
+        </div>
+    </section> 
     <nav class="navbar navbar-expand-lg navbar-white bg-white py-0 shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="">
@@ -77,24 +145,34 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="events.html">Events</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="membershipDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Membership
+                            </a>
+                            <ul class="dropdown-menu border-0" aria-labelledby="membershipDropdown">
+                                <li><a class="dropdown-item" href="membership-benefits.html">Membership Benefits</a>
+                                </li>
+                                <li><a class="dropdown-item" href="membership-levels.html">Membership Levels</a></li>
+                                <li><a class="dropdown-item" href="join-us.html">Terms & Conditions</a></li>
+                                <li><a class="dropdown-item" href="join-us.html">Join Us</a></li>
+                            </ul>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="executive-board.html">The Executive
                                 Board</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="membership.html">Membership</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="blogs.html">Blogs</a>
+                            <a class="nav-link" href="events.html">Events</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="gallery.html">Gallery</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="support.html">Support</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blogs.html">Blogs</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="contact.html">Contact</a>
@@ -106,15 +184,38 @@
     </nav>
 
     <main>
+        <section id="board-hero" class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h1 class="hero-title" data-aos="fade-up">Meet Our Executive Board</h1>
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Guiding the Asia Africa Chamber
+                            of Commerce to new heights</p>
+                        <a href="#board-members" class="btn btn-primary btn-lg hero-button" data-aos="fade-up"
+                            data-aos-delay="400">Learn More</a>
+                    </div>
+                    <div class="col-md-6" data-aos="zoom-in" data-aos-delay="600">
+                        <div class="hero-images">
+                            <img src="images/Board-Members/Peter Mutinda.png" alt="Board Member 1" class="hero-image">
+                            <img src="images/Board-Members/Agusto.png" alt="Board Member 2" class="hero-image">
+                            <img src="images/Board-Members/Romel.jpeg" alt="Board Member 3" class="hero-image">
+                            <img src="images/Board-Members/Mohamed.jpeg" alt="Board Member 4" class="hero-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Introduction Section: -->
-        <section id="board-intro" class="py-5 bg-light">
+        <!-- <section id="board-intro" class="py-5 bg-light">
             <div class="container lh-lg">
                 <h1 class="text-center mb-4 fw-bold">Executive Board</h1>
                 <p class="lead text-start">Our executive board comprises distinguished leaders from various industries
                     across Asia and Africa. They bring a wealth of experience and expertise to guide our chamber's
                     mission of fostering economic cooperation between the two continents.</p>
             </div>
-        </section>
+        </section> -->
 
         <section id="executive-board" class="py-5">
             <div class="container">

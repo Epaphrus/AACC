@@ -7,3 +7,14 @@ body {
 #topNav #text {
     color: #dfdfdf;
 }
+.navbar-brand {
+    font-weight: bold;
+}
+
+.display-4 {
+    color: #0056b3;
+}
+
+.display-1 {
+    background-color: #0056b3;
+}
