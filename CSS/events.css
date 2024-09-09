@@ -133,3 +133,60 @@
 .btn-primary:focus:not(:active)::after {
     animation: ripple 1s ease-out;
 }
+
+/* HERO SECTION  */
+#events-hero {
+    background: url('/images/carousel/environment.jpg') center center no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+}
+
+.hero-overlay {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5));
+    z-index: 1;
+}
+
+#events-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-images {
+    position: relative;
+    height: 500px;
+}
+
+.hero-images img {
+    position: absolute;
+    width: 200px;
+    border: 5px solid #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.hero-images img:nth-child(1) {
+    top: 0;
+    left: 0;
+    transform: rotate(-10deg);
+}
+
+.hero-images img:nth-child(2) {
+    top: 50px;
+    right: 0;
+    transform: rotate(10deg);
+}
+
+.hero-images img:nth-child(3) {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(5deg);
+}
+
+@media (max-width: 991.98px) {
+    #events-hero {
+        padding: 60px 0;
+    }
+
+    .hero-images {
+        display: none;
+    }
+}
