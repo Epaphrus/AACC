@@ -4,11 +4,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Join the Asia Africa Chamber of Commerce to unlock business potential and access a range of benefits including networking, visibility, and more.">
+    <meta name="keywords"
+        content="Asia Africa Chamber of Commerce, membership benefits, business networking, business growth, membership levels">
     <link rel="stylesheet" href="css/general.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Membership</title>
+    <style>
+        .membership-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/Hero/banner.png') no-repeat center center / cover;
+            padding: 100px 0;
+        }
+
+        .membership-hero h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .membership-hero p.lead {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .membership-hero ul li {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .membership-hero ul li i {
+            color: #ffc107;
+            margin-right: 10px;
+        }
+
+        .membership-hero .btn-primary {
+            font-size: 20px;
+            padding: 12px 30px;
+            margin-top: 30px;
+        }
+
+        .membership-hero-image {
+            text-align: center;
+        }
+
+        .membership-hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .membership-benefits {
+            background-color: #f8f9fa;
+        }
+
+        .benefit-item {
+            margin-bottom: 30px;
+        }
+
+        .benefit-item i {
+            font-size: 36px;
+            color: #ff5722;
+            margin-bottom: 15px;
+        }
+
+        .benefit-item h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .benefit-item p {
+            font-size: 16px;
+            color: #666;
+        }
+
+        .membership-benefits {
+            background-color: #f8f9fa;
+        }
+
+        .benefit-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-icon {
+            font-size: 36px;
+            color: #ff5722;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            font-size: 16px;
+            color: #666;
+        }
+    </style>
 </head>
 
 <body>
@@ -52,8 +164,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
-                        <li class="nav-item dropdown active">
-                            <a class="nav-link dropdown-toggle" aria-current="page" href="membership.html"
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" aria-current="page" href="membership.html"
                                 id="membershipDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Membership
                             </a>
@@ -91,40 +203,174 @@
     </nav>
 
     <main>
-        <!-- MEMBERSHIP BENEFITS SECTION  -->
-        <section class="container">
-            <h2>Membership Benefits</h2>
-            <p>As a member of the Asia Africa Chamber of Commerce, you can enjoy a wide range of benefits designed to
-                support your business growth and success:</p>
-            <ul>
-                <li><strong>Networking Opportunities:</strong> Connect with like-minded businesses and professionals
-                    from
-                    various industries across Asia and Africa. Attend exclusive events, workshops, and conferences to
-                    expand
-                    your network and explore potential collaborations.</li>
-                <li><strong>Business Exposure:</strong> Gain increased visibility for your business through our online
-                    directory, member spotlights, and promotional channels. Showcase your products or services to a
-                    targeted
-                    audience and attract new customers.</li>
-                <li><strong>Market Insights:</strong> Access valuable market intelligence, industry reports, and
-                    economic
-                    data to make informed business decisions. Stay updated on the latest trends, opportunities, and
-                    challenges in the Asian and African markets.</li>
-                <li><strong>Training and Development:</strong> Participate in skill-building workshops, seminars, and
-                    webinars designed to enhance your business acumen and keep you ahead of the curve. Learn from
-                    industry
-                    experts and gain practical insights to drive your business forward.</li>
-                <li><strong>Advocacy and Representation:</strong> Be part of a collective voice that advocates for the
-                    interests of businesses in Asia and Africa. We work closely with governments and policymakers to
-                    create
-                    a favorable business environment and address key challenges faced by our members.</li>
-                <li><strong>Business Support Services:</strong> Access a range of business support services, including
-                    legal
-                    advice, market entry strategies, and trade facilitation assistance. Our team of experts is ready to
-                    provide guidance and support to help you navigate the complexities of doing business across borders.
-                </li>
-            </ul>
-            <p>Join the Asia Africa Chamber of Commerce today and unlock a world of opportunities for your business!</p>
+        <section class="membership-hero">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h1 class="display-4 text-white animate__animated animate__fadeInUp">Unlock Your Business
+                            Potential</h1>
+                        <p class="lead text-white animate__animated animate__fadeInUp animate__delay-1s">Join the Asia
+                            Africa Chamber of Commerce and access a world of opportunities.</p>
+                        <ul class="list-unstyled text-white animate__animated animate__fadeInUp animate__delay-2s">
+                            <li><i class="fas fa-check"></i> Expand your network across Asia and Africa</li>
+                            <li><i class="fas fa-check"></i> Gain access to exclusive events and resources</li>
+                            <li><i class="fas fa-check"></i> Enhance your business visibility and credibility</li>
+                            <li><i class="fas fa-check"></i> Stay updated on the latest market trends and insights</li>
+                        </ul>
+                        <a href="join-us.html"
+                            class="btn btn-primary btn-lg animate__animated animate__fadeInUp animate__delay-3s">Become
+                            a Member</a>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="membership-hero-image animate__animated animate__fadeInRight animate__delay-1s">
+                            <!-- <img src="path/to/membership-hero-image.jpg" alt="Membership Hero Image" class="img-fluid"> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MEMBERSHIP BENEFITS SECTION -->
+        <section class="membership-benefits py-5">
+            <div class="container">
+                <h2 class="text-center mb-4">Membership Benefits</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card benefit-card">
+                            <div class="card-body">
+                                <i class="fas fa-network-wired card-icon"></i>
+                                <h3 class="card-title">Networking Opportunities</h3>
+                                <p class="card-text">We provide a vibrant networking platform with other businesses and
+                                    professionals. Regular events, workshops, and seminars allow you to connect with
+                                    potential customers, suppliers, and partners, expanding your business contacts.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card benefit-card">
+                            <div class="card-body">
+                                <i class="fas fa-chart-line card-icon"></i>
+                                <h3 class="card-title">Increased Visibility and Credibility</h3>
+                                <p class="card-text">We enhance your company's credibility. Being associated with a
+                                    reputable organization demonstrates your commitment to the local business community
+                                    and builds trust among customers and stakeholders.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card benefit-card">
+                            <div class="card-body">
+                                <i class="fas fa-bullhorn card-icon"></i>
+                                <h3 class="card-title">Advocacy and Representation</h3>
+                                <p class="card-text">We actively advocate for the interests of our members at the local,
+                                    regional, and national levels. We work closely with policymakers, government
+                                    officials, and local authorities to influence decisions that impact businesses,
+                                    creating a favorable business environment.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card benefit-card">
+                            <div class="card-body">
+                                <i class="fas fa-info-circle card-icon"></i>
+                                <h3 class="card-title">Access to Resources and Information</h3>
+                                <p class="card-text">We provide access to valuable resources, market data, economic
+                                    insights, and industry trends. This information can help you make well-informed
+                                    business decisions and stay ahead of the competition.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card benefit-card">
+                            <div class="card-body">
+                                <i class="fas fa-bullseye card-icon"></i>
+                                <h3 class="card-title">Business Promotion and Marketing</h3>
+                                <p class="card-text">We offer various marketing opportunities, such as listing your
+                                    business in our directories, featuring your events, or promoting your products and
+                                    services through newsletters and social media channels, increasing your brand
+                                    visibility.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card benefit-card">
+                            <div class="card-body">
+                                <i class="fas fa-graduation-cap card-icon"></i>
+                                <h3 class="card-title">Educational and Training Program</h3>
+                                <p class="card-text">We organize workshops, webinars, and training sessions designed to
+                                    help businesses grow and develop essential skills. These educational opportunities
+                                    can benefit both you and your employees.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card benefit-card">
+                            <div class="card-body">
+                                <i class="fas fa-piggy-bank card-icon"></i>
+                                <h3 class="card-title">Cost-Saving Benefits</h3>
+                                <p class="card-text">We negotiate special deals and discounts on products and services,
+                                    including insurance, office supplies, travel, and more. These exclusive offers can
+                                    lead to significant cost savings for your business.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card benefit-card">
+                            <div class="card-body">
+                                <i class="fas fa-hands-helping card-icon"></i>
+                                <h3 class="card-title">Community Involvement</h3>
+                                <p class="card-text">Being part of the Asia Africa Chamber of Commerce allows you to
+                                    positively contribute to the local community. We often organize charity events and
+                                    community projects, giving you the chance to make a difference and build a positive
+                                    brand image.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card benefit-card">
+                            <div class="card-body">
+                                <i class="fas fa-user-plus card-icon"></i>
+                                <h3 class="card-title">Referral Opportunities</h3>
+                                <p class="card-text">We actively refer our members to potential customers, creating
+                                    additional leads and business opportunities for your company.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card benefit-card">
+                            <div class="card-body">
+                                <i class="fas fa-chalkboard-teacher card-icon"></i>
+                                <h3 class="card-title">Business Support and Mentorship</h3>
+                                <p class="card-text">Many Chambers provide mentorship programs or pair you with
+                                    experienced business leaders who can offer guidance and support, especially for
+                                    startups and small businesses.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card benefit-card">
+                            <div class="card-body">
+                                <i class="fas fa-users card-icon"></i>
+                                <h3 class="card-title">Collective Voice</h3>
+                                <p class="card-text">By joining the Chamber, you become part of a collective voice for
+                                    the business community. Your opinions and concerns can be heard and addressed
+                                    collectively, making a more substantial impact.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card benefit-card">
+                            <div class="card-body">
+                                <i class="fas fa-book-reader card-icon"></i>
+                                <h3 class="card-title">Continuous Learning and Growth</h3>
+                                <p class="card-text">We regularly organize seminars, panel discussions, and
+                                    industry-specific events, providing continuous learning opportunities for you and
+                                    your team, keeping you updated with the latest trends and best practices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- MEMBERSHIP LEVELS SECTION  -->
@@ -183,7 +429,7 @@
         </section>
 
         <!-- BECOME A MEMBER CALL TO ACTION  -->
-        <SECtion class="container">
+        <section class="container">
             <h2>Become a Member</h2>
             <p>Join the Asia Africa Chamber of Commerce today and unlock a world of opportunities for your business!</p>
             <ul>
@@ -206,7 +452,7 @@
                     href="mailto:membership@asiaafricachamber.com">membership@asiaafricachamber.com</a>.</p>
             <a href="membership-form.html" class="btn btn-primary">Apply Now</a>
 
-        </SECtion>
+        </section>
 
     </main>
 
