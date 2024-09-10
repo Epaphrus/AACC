@@ -4,29 +4,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asia Africa Chamber of Commerce - Home</title>
+    <meta name="description"
+        content="Meet the executive board of the Asia Africa Chamber of Commerce. Our diverse leadership team is committed to fostering economic cooperation and growth between Asia and Africa.">
+    <title>Executive Board - Asia Africa Chamber of Commerce</title>
     <link rel="stylesheet" href="css/general.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Asia Africa Chamber of Commerce",
+          "url": "https://www.asiaafricachamber.com",
+          "logo": "https://www.asiaafricachamber.com/images/logo/Logo.png",
+          "description": "Connecting businesses across Asia and Africa",
+          "sameAs": [
+            "https://www.facebook.com/asiaafricachamber",
+            "https://twitter.com/asiaafricachamber",
+            "https://www.linkedin.com/company/asiaafricachamber"
+          ],
+          "subOrganization": {
+            "@type": "OrganizationRole",
+            "name": "Executive Board",
+            "description": "The leadership team of the Asia Africa Chamber of Commerce",
+            "member": [
+              {
+                "@type": "Person",
+                "name": "Peter Mutinda",
+                "jobTitle": "President"
+              },
+              {
+                "@type": "Person",
+                "name": "H.E. RUZAIMI MOHAMAD",
+                "jobTitle": "Board Member"
+              }
+              // Add more board members as needed
+            ]
+          }
+        }
+        </script>
+    <style>
+        .hero-section {
+            position: relative;
+            background-image: url('/images/Hero/corp.avif');
+            background-size: cover;
+            background-position: center;
+            padding: 150px 0;
+            color: #fff;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .hero-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .hero-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .hero-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 
 <body>
-    <section class="bg-primary py-1"></section>
-    <div class="container text-white">
-        <div class="d-flex justify-content-between">
-            <p id="topNav" class="p-0 m-0"><i class="bi bi-envelope-fill"></i> <span id="text">Write to us:
-                    info@asiaafrika.org</span></p>
-            <p id="topNav" class="p-0 m-0"><i class="bi bi-telephone-fill"></i> <span id="text">Call us today: +254
-                    712 885 069</span></p>
-            <p id="topNav" class="p-0 m-0"><i class="bi bi-geo-alt-fill"></i> <span id="text">Visit Our Offices:
-                    Mpaka House - Nairobi, Kenya.</span></p>
-            <p id="topNav" class="p-0 m-0"><i class="bi bi-facebook"></i> <i class="bi bi-twitter"></i> <i
-                    class="bi bi-linkedin"></i> <i class="bi bi-instagram"></i></p>
+    <section class="bg-primary py-1">
+        <div class="container text-white">
+            <div class="d-flex justify-content-between">
+                <p id="topNav" class="p-0 m-0"><i class="bi bi-envelope-fill"></i> <span id="text">Write to us:
+                        info@asiaafrika.org</span></p>
+                <p id="topNav" class="p-0 m-0"><i class="bi bi-telephone-fill"></i> <span id="text">Call us today: +254
+                        712 885 069</span></p>
+                <p id="topNav" class="p-0 m-0"><i class="bi bi-geo-alt-fill"></i> <span id="text">Visit Our Offices:
+                        Mpaka House - Nairobi, Kenya.</span></p>
+                <p id="topNav" class="p-0 m-0"><i class="bi bi-facebook"></i> <i class="bi bi-twitter"></i> <i
+                        class="bi bi-linkedin"></i> <i class="bi bi-instagram"></i></p>
+            </div>
         </div>
-    </div>
     </section>
-
     <nav class="navbar navbar-expand-lg navbar-white bg-white py-0 shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="">
@@ -49,10 +143,10 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 fw-semibold gap-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link" href="index.html">Home</a>
                         </li>
-                        <li class="nav-item dropdown active">
-                            <a class="nav-link dropdown-toggle" aria-current="page" href="membership.html"
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle active" aria-current="page" href="membership.html"
                                 id="membershipDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Membership
                             </a>
@@ -61,7 +155,7 @@
                                 </li>
                                 <li><a class="dropdown-item" href="membership.html#levels">Membership Levels</a></li>
                                 <li><a class="dropdown-item" href="membership.html#terms">Terms & Conditions</a></li>
-                                <li><a class="dropdown-item" href="join-us.html">Become A Member</a></li>
+                                <li><a class="dropdown-item active" href="join-us.html">Become A Member</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -89,9 +183,9 @@
         </div>
     </nav>
 
-    <main class="container py-5">
-        <section>
-            <h1 class="mb-5 fw-semibold">Membership Application</h1>
+    <main>
+        <section class="container">
+            <h2 class="mb-5 fw-semibold">Membership Application</h2>
             <form id="membershipForm" class="row g-3">
                 <h2 class="fw-semibold">Entity Information</h2>
                 <div class="col-md-6">
@@ -194,12 +288,13 @@
                     <button type="submit" class="btn btn-primary">Submit Application</button>
                 </div>
             </form>
-
-            <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button"><i
-                    class="bi bi-arrow-up"></i>
-            </a>
         </section>
+
+        <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button"><i
+                class="bi bi-arrow-up"></i>
+        </a>
     </main>
+
 
     <footer class="bg-dark text-light py-3">
         <div class="container text-center">
@@ -212,7 +307,15 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+        });
 
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
