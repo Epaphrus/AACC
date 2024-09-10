@@ -4,73 +4,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Become A Member</title>
+    <meta name="description"
+        content="Join the Asia Africa Chamber of Commerce to unlock business potential and access a range of benefits including networking, visibility, and more.">
+    <meta name="keywords"
+        content="Asia Africa Chamber of Commerce, membership benefits, business networking, business growth, membership levels">
     <link rel="stylesheet" href="css/general.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/custom.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
+    <title>Become A Member</title>
+    <style>
+        /* Hero Section Styles */
+        .hero-registration {
+            background: url('/images/Hero/Happy.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            position: relative;
+            min-height: 400px;
+            /* Ensure enough height */
+        }
+
+        .hero-registration .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            /* Dark overlay for better text contrast */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-registration h1 {
+            font-size: 3rem;
+            /* Large text for emphasis */
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+            /* Text shadow for readability */
+        }
+
+        .hero-registration p {
+            font-size: 1.25rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-registration .btn {
+            border-radius: 50px;
+            padding: 0.75rem 2rem;
+            font-size: 1.125rem;
+            background-color: #007bff;
+            color: #fff;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .hero-registration .btn:hover {
+            background-color: #0056b3;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 767px) {
+            .hero-registration h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-registration p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Top Navigation Bar -->
-    <section class="bg-primary py-2">
+
+    <section class="bg-primary py-1">
         <div class="container text-white">
             <div class="d-flex justify-content-between">
-                <p class="p-0 m-0"><i class="bi bi-envelope-fill"></i> <span>Write to us: <a href="mailto:info@asiaafrika.org" class="text-white">info@asiaafrika.org</a></span></p>
-                <p class="p-0 m-0"><i class="bi bi-telephone-fill"></i> <span>Call us today: +254 712 885 069</span></p>
-                <p class="p-0 m-0"><i class="bi bi-geo-alt-fill"></i> <span>Visit Our Offices: Mpaka House - Nairobi, Kenya</span></p>
-                <p class="p-0 m-0"><i class="bi bi-facebook"></i> <i class="bi bi-twitter"></i> <i class="bi bi-linkedin"></i> <i class="bi bi-instagram"></i></p>
+                <p id="topNav" class="p-0 m-0"><i class="bi bi-envelope-fill"></i> <span id="text">Write to us:
+                        info@asiaafrika.org</span></p>
+                <p id="topNav" class="p-0 m-0"><i class="bi bi-telephone-fill"></i> <span id="text">Call us today: +254
+                        712 885 069</span></p>
+                <p id="topNav" class="p-0 m-0"><i class="bi bi-geo-alt-fill"></i> <span id="text">Visit Our Offices:
+                        Mpaka House - Nairobi, Kenya.</span></p>
+                <p id="topNav" class="p-0 m-0"><i class="bi bi-facebook"></i> <i class="bi bi-twitter"></i> <i
+                        class="bi bi-linkedin"></i> <i class="bi bi-instagram"></i></p>
             </div>
         </div>
     </section>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white py-0 shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-white bg-white py-0 shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="images/logo/Logo.png" alt="Asia Africa Chamber of Commerce Logo" height="50" />
+            <a class="navbar-brand" href="">
+                <img src="images/logo/Logo.png" alt="Asia Africa Chamber of Commerce Logo" height="50"
+                    class="d-inline-block align-top" />
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
-                    <a class="navbar-brand" href="#">
-                        <img src="images/logo/Logo.png" alt="Asia Africa Chamber of Commerce Logo" height="50" />
+                    <a class="navbar-brand" href="">
+                        <img src="images/logo/Logo.png" alt="Asia Africa Chamber of Commerce Logo" height="50"
+                            class="d-inline-block align-top" />
                     </a>
                     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 fw-semibold">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3 fw-semibold gap-3">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active" aria-current="page" href="membership.html" id="membershipDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle active" aria-current="page" href="membership.html"
+                                id="membershipDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Membership
                             </a>
                             <ul class="dropdown-menu border-0" aria-labelledby="membershipDropdown">
-                                <li><a class="dropdown-item" href="membership.html">Membership Benefits</a></li>
+                                <li><a class="dropdown-item" href="membership.html">Membership Benefits</a>
+                                </li>
                                 <li><a class="dropdown-item" href="membership.html#levels">Membership Levels</a></li>
                                 <li><a class="dropdown-item" href="membership.html#terms">Terms & Conditions</a></li>
-                                <li><a class="dropdown-item active" href="join-us.html">Become A Member</a></li>
+                                <li><a class="dropdown-item" href="join-us.html">Become A Member</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="executive-board.html">The Executive Board</a></li>
-                        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
-                        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                        <li class="nav-item"><a class="nav-link" href="support.html">Support</a></li>
-                        <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="executive-board.html">The Executive Board</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="events.html">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="gallery.html">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="support.html">Support</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blogs.html">Blogs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
                     </ul>
                 </div>
+
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main>
-        
+        <section class="hero-registration d-flex justify-content-center align-items-center text-center text-white py-5">
+            <div class="overlay d-flex justify-content-center align-items-center w-100 h-100">
+                <div class="container">
+                    <h1 class="display-3 fw-bold mb-4">Unlock New Opportunities!</h1>
+                    <p class="lead mb-4">Join the Asia Africa Chamber of Commerce and elevate your business with
+                        unparalleled networking, insights, and growth opportunities.</p>
+                    <a href="#membershipForm" class="btn btn-light btn-lg shadow-lg">Get Started</a>
+                </div>
+            </div>
+        </section>
+
         <section class="container py-5">
             <h2 class="mb-5 fw-semibold">Membership Application</h2>
             <form id="membershipForm" class="row g-3">
@@ -169,19 +268,25 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-light py-4">
+    <footer class="bg-dark text-light py-3">
         <div class="container text-center">
-            <p class="mb-0">&copy; 2024 Asia Africa Chamber of Commerce. All rights reserved.</p>
+            <p>&copy; 2024 Asia Africa Chamber of Commerce. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" class="text-light me-3"><i class="bi bi-linkedin fs-4"></i></a>
+                <a href="#" class="text-light me-3"><i class="bi bi-facebook fs-4"></i></a>
+                <a href="#" class="text-light me-3"><i class="bi bi-twitter fs-4"></i></a>
+                <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+            </div>
         </div>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-        AOS.init();
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init();
+        });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
