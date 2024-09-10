@@ -1,15 +1,23 @@
 body {
     font-family: 'Barlow', sans-serif !important;
 }
+
 .navbar-nav .nav-link {
     font-size: 14px;
 }
+
+.dropdown-menu .dropdown-item {
+    font-size: 14px;
+}
+
 #topNav {
     font-size: 12px;
 }
+
 #topNav #text {
     color: #dfdfdf;
 }
+
 .navbar-brand {
     font-weight: bold;
 }
