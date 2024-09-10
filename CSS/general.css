@@ -1,8 +1,11 @@
 body {
     font-family: 'Barlow', sans-serif !important;
 }
-#topNav {
+.navbar-nav .nav-link {
     font-size: 14px;
+}
+#topNav {
+    font-size: 12px;
 }
 #topNav #text {
     color: #dfdfdf;
