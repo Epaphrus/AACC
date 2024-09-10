@@ -76,6 +76,75 @@
                 font-size: 1rem;
             }
         }
+
+        form {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        /* Field styling */
+        form .form-control {
+            border-radius: 0.5rem;
+            box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.05);
+            border-color: #ced4da;
+            padding: 1rem;
+        }
+
+        form .form-label {
+            font-weight: 600;
+        }
+
+        form .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+        }
+
+        /* Validation feedback */
+        .invalid-feedback {
+            display: none;
+            color: red;
+        }
+
+        form .form-control:invalid~.invalid-feedback {
+            display: block;
+        }
+
+        /* Button styling */
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 50px;
+            padding: 0.75rem 2rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Section Heading */
+        form h2 {
+            color: #343a40;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 767px) {
+            form h2 {
+                font-size: 1.5rem;
+            }
+
+            form .btn-primary {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
@@ -168,98 +237,111 @@
         </section>
 
         <section class="container py-5">
-            <h2 class="mb-5 fw-semibold">Membership Application</h2>
-            <form id="membershipForm" class="row g-3">
-                <h3 class="fw-semibold">Entity Information</h3>
+            <h2 class="mb-5 fw-semibold text-center">Membership Application</h2>
+            <form id="membershipForm" class="row g-4 bg-light p-5 shadow-lg rounded" novalidate>
+                <h2 class="fw-semibold mb-4">Entity Information</h2>
+
                 <div class="col-md-6">
-                    <label for="applyingEntity" class="form-label">Applying Entity</label>
-                    <input type="text" class="form-control" id="applyingEntity" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="businessCategory" class="form-label">Business Category</label>
-                    <input type="text" class="form-control" id="businessCategory" required>
-                </div>
-                <div class="col-12">
-                    <label for="mailingAddress" class="form-label">Mailing Address</label>
-                    <input type="text" class="form-control" id="mailingAddress" required>
-                </div>
-                <div class="col-12">
-                    <label for="physicalAddress1" class="form-label">Physical Address: Address Line 1</label>
-                    <input type="text" class="form-control" id="physicalAddress1" required>
-                </div>
-                <div class="col-12">
-                    <label for="physicalAddress2" class="form-label">Address Line 2</label>
-                    <input type="text" class="form-control" id="physicalAddress2">
-                </div>
-                <div class="col-md-6">
-                    <label for="city" class="form-label">City</label>
-                    <input type="text" class="form-control" id="city" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="country" class="form-label">Country</label>
-                    <input type="text" class="form-control" id="country" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="phone" class="form-label">Phone</label>
-                    <input type="tel" class="form-control" id="phone" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="generalMail" class="form-label">General Mail</label>
-                    <input type="email" class="form-control" id="generalMail" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="marketingMail" class="form-label">Marketing Mail</label>
-                    <input type="email" class="form-control" id="marketingMail">
-                </div>
-                <div class="col-md-6">
-                    <label for="employees" class="form-label">Number of Employees</label>
-                    <input type="number" class="form-control" id="employees" required>
-                </div>
-                <div class="col-12">
-                    <label for="website" class="form-label">Website URL</label>
-                    <input type="url" class="form-control" id="website">
-                </div>
-                <div class="col-md-6">
-                    <label for="membershipPackage" class="form-label">Select Membership Package</label>
-                    <select class="form-select" id="membershipPackage" required>
-                        <option value="">Choose...</option>
-                        <option value="basic">Basic</option>
-                        <option value="premium">Premium</option>
-                        <option value="executive">Executive</option>
-                    </select>
-                </div>
-                <div class="col-12">
-                    <label for="joiningReason" class="form-label">Reason(s) for Joining AACC</label>
-                    <textarea class="form-control" id="joiningReason" rows="3" required></textarea>
+                    <label for="applyingEntity" class="form-label">Applying Entity <i
+                            class="bi bi-building"></i></label>
+                    <input type="text" class="form-control" id="applyingEntity" placeholder="Enter your company name"
+                        required>
+                    <div class="invalid-feedback">
+                        Please provide your entity name.
+                    </div>
                 </div>
 
-                <h3 class="fw-semibold mt-5">Representative Information</h3>
-                <div class="col-md-4">
-                    <label for="firstName" class="form-label">First Name</label>
-                    <input type="text" class="form-control" id="firstName" required>
-                </div>
-                <div class="col-md-4">
-                    <label for="middleName" class="form-label">Middle Name</label>
-                    <input type="text" class="form-control" id="middleName">
-                </div>
-                <div class="col-md-4">
-                    <label for="lastName" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" id="lastName" required>
-                </div>
                 <div class="col-md-6">
-                    <label for="repPhone" class="form-label">Phone</label>
-                    <input type="tel" class="form-control" id="repPhone" required>
+                    <label for="businessCategory" class="form-label">Business Category <i
+                            class="bi bi-briefcase-fill"></i></label>
+                    <input type="text" class="form-control" id="businessCategory" placeholder="e.g. Manufacturing, IT"
+                        required>
+                    <div class="invalid-feedback">
+                        Please provide the business category.
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <label for="repEmail" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="repEmail" required>
-                </div>
+
                 <div class="col-12">
-                    <label for="repJobTitle" class="form-label">Job Title</label>
-                    <input type="text" class="form-control" id="repJobTitle" required>
+                    <label for="mailingAddress" class="form-label">Mailing Address <i
+                            class="bi bi-envelope-fill"></i></label>
+                    <input type="text" class="form-control" id="mailingAddress" placeholder="P.O. Box, Street, etc."
+                        required>
+                    <div class="invalid-feedback">
+                        Please provide a valid mailing address.
+                    </div>
                 </div>
-                <div class="col-12 mt-4">
-                    <button type="submit" class="btn btn-primary">Submit Application</button>
+
+                <div class="col-md-6">
+                    <label for="contactPerson" class="form-label">Contact Person <i
+                            class="bi bi-person-fill"></i></label>
+                    <input type="text" class="form-control" id="contactPerson" placeholder="Full name of contact person"
+                        required>
+                    <div class="invalid-feedback">
+                        Please provide the contact person's name.
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email Address <i class="bi bi-envelope-fill"></i></label>
+                    <input type="email" class="form-control" id="email" placeholder="Email address" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid email address.
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="phone" class="form-label">Phone Number <i class="bi bi-telephone-fill"></i></label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Phone number" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid phone number.
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="website" class="form-label">Website (optional) <i class="bi bi-globe"></i></label>
+                    <input type="url" class="form-control" id="website" placeholder="Website URL">
+                </div>
+
+                <h2 class="fw-semibold mb-4 mt-5">Representative Information</h2>
+
+                <div class="col-md-4">
+                    <label for="firstName" class="form-label">First Name <i class="bi bi-person-fill"></i></label>
+                    <input type="text" class="form-control" id="firstName" placeholder="First name" required>
+                    <div class="invalid-feedback">
+                        First name is required.
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="lastName" class="form-label">Last Name <i class="bi bi-person-fill"></i></label>
+                    <input type="text" class="form-control" id="lastName" placeholder="Last name" required>
+                    <div class="invalid-feedback">
+                        Last name is required.
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="jobTitle" class="form-label">Job Title <i class="bi bi-briefcase-fill"></i></label>
+                    <input type="text" class="form-control" id="jobTitle" placeholder="Job title" required>
+                    <div class="invalid-feedback">
+                        Job title is required.
+                    </div>
+                </div>
+
+                <div class="col-12 d-flex justify-content-between align-items-center mt-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="certify" required>
+                        <label class="form-check-label" for="certify">
+                            I certify all information provided is correct.
+                        </label>
+                        <div class="invalid-feedback">
+                            You must certify the information to continue.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 text-center mt-5">
+                    <button type="submit" class="btn btn-primary btn-lg px-5">Submit Application</button>
                 </div>
             </form>
         </section>
