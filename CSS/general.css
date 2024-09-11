@@ -1,10 +1,10 @@
 body {
     font-family: 'Barlow', sans-serif !important;
 }
-
-/* .navbar-nav .nav-link {
-    font-size: 16px !important;
+.navbar-nav .nav-link {
+    font-size: 15px !important;
 }
+/* 
 .navbar-nav .nav-link.active {
     background: linear-gradient(45deg, #0004ff, #ff0000);
     -webkit-background-clip: text;
