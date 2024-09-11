@@ -29,3 +29,10 @@ body {
 .display-1 {
     background-color: #0056b3;
 }
+.gradient-text {
+    background: linear-gradient(65deg, #0051ff, #00ff88);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+}
