@@ -6,9 +6,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // DOM element references
     const gallery = document.getElementById('gallery');
-    const searchInput = document.getElementById('searchInput');
-    const searchButton = document.getElementById('searchButton');
-    const filterButtons = document.querySelectorAll('.filter-btn');
     const modal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
     const modalTitle = document.getElementById('imageModalLabel');
@@ -36,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         gallery.innerHTML = items.map((item, index) => `
             <div class="col-md-4 col-sm-6 gallery-item ${item.category}" data-category="${item.category}">
                 <div class="image-container">
-                    <img src="${item.image}" alt="${item.title}" class="img-fluid" data-index="${index}">
+                    <img src="${item.image}" alt="${item.title}" class="img-fluid rounded" data-index="${index}">
                 </div>
                 <p class="image-title">${item.title}</p>
             </div>
@@ -52,36 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
             columnWidth: '.gallery-item',
             percentPosition: true
         });
-    }
-
-    /**
-     * Sets up event listeners for filter buttons
-     */
-    function initializeFilters() {
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                this.classList.add('active');
-                const filter = this.dataset.filter;
-                filterGallery(filter);
-            });
-        });
-    }
-
-    /**
-     * Filters gallery items based on selected category
-     * @param {string} filter - Category to filter by
-     */
-    function filterGallery(filter) {
-        const items = document.querySelectorAll('.gallery-item');
-        items.forEach(item => {
-            if (filter === 'all' || item.dataset.category === filter) {
-                item.style.display = 'block';
-            } else {
-                item.style.display = 'none';
-            }
-        });
-        gallery.masonry('layout');
     }
 
     /**
@@ -107,19 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
         modal.classList.add('show');
         modal.style.display = 'block';
     }
-
-    /**
-     * Event listener for search functionality
-     */
-    searchButton.addEventListener('click', function() {
-        const searchTerm = searchInput.value.toLowerCase();
-        const filteredItems = galleryItems.filter(item => 
-            item.title.toLowerCase().includes(searchTerm) || 
-            item.category.toLowerCase().includes(searchTerm)
-        );
-        renderGallery(filteredItems);
-        gallery.masonry('layout');
-    });
 
     /**
      * Event listener to close the modal
