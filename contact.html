@@ -12,6 +12,125 @@
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="images/logo/AAMEC LOGO.jpeg" />
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <style>
+        .hero-section {
+            position: relative;
+            background-image: url('/images/Hero/motehrhood-contact-us.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .min-vh-50 {
+            min-height: 50vh;
+        }
+
+        .contact-section {
+            background-color: #f8f9fa;
+            background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        }
+
+        .form-control {
+            border-radius: 0.25rem;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .form-control:focus {
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        .btn-primary {
+            border-radius: 0.25rem;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .map-container {
+            position: relative;
+            padding-bottom: 75%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .card {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        #contact-form .form-control {
+            border: 2px solid #e9ecef;
+            transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        #contact-form .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        }
+
+        #contact-form .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        #contact-form .btn-primary:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        #contact-form label {
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .contact-info .icon-circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .contact-info li:hover .icon-circle {
+            transform: scale(1.1);
+        }
+
+        .contact-info h5 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        .contact-info p {
+            color: #6c757d;
+        }
+    </style>
 </head>
 
 <body>
@@ -77,10 +196,10 @@
                             <a class="nav-link" href="gallery.html">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="blogs.html">Blogs</a>
+                            <a class="nav-link disabled" aria-disabled="true" href="blogs.html">Blogs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active"  aria-current="page" href="contact.html">Contact</a>
+                            <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -89,7 +208,114 @@
     </nav>
 
     <main>
- 
+        <!-- HERO SECTION  -->
+        <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="container position-relative">
+                <div class="row align-items-center min-vh-50">
+                    <div class="col-lg-8 mx-auto text-center text-white">
+                        <h1 class="display-4 fw-bold mb-3" data-aos="fade-up">Get in Touch with AACC</h1>
+                        <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
+                            We're here to answer your questions and help you connect with the Asia-Africa business
+                            community.
+                            Reach out to us today and let's start a conversation.
+                        </p>
+                        <a href="#contact-form" class="btn btn-light btn-lg" data-aos="fade-up" data-aos-delay="200">
+                            Contact Us Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT FORM & ADDRESS  -->
+        <section class="contact-section py-5">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- Left Column: Contact Form -->
+                    <div class="col-lg-6">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body p-4">
+                                <h2 class="card-title mb-4 fw-bold" data-aos="fade-up">Send Us a Message</h2>
+                                <form id="contact-form">
+                                    <div class="mb-3" data-aos="fade-up" data-aos-delay="100">
+                                        <label for="name" class="form-label">Your Name</label>
+                                        <input type="text" class="form-control form-control-lg" id="name"
+                                            placeholder="John Doe" required>
+                                    </div>
+                                    <div class="mb-3" data-aos="fade-up" data-aos-delay="200">
+                                        <label for="email" class="form-label">Your Email</label>
+                                        <input type="email" class="form-control form-control-lg" id="email"
+                                            placeholder="johndoe@example.com" required>
+                                    </div>
+                                    <div class="mb-3" data-aos="fade-up" data-aos-delay="300">
+                                        <label for="subject" class="form-label">Subject</label>
+                                        <input type="text" class="form-control form-control-lg" id="subject"
+                                            placeholder="Inquiry about membership" required>
+                                    </div>
+                                    <div class="mb-3" data-aos="fade-up" data-aos-delay="400">
+                                        <label for="message" class="form-label">Your Message</label>
+                                        <textarea class="form-control form-control-lg" id="message" rows="5"
+                                            placeholder="Type your message here..." required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-lg w-100" data-aos="fade-up"
+                                        data-aos-delay="500">Send Message</button>
+                                </form>
+                                <div id="thank-you-message" class="alert alert-success mt-3" style="display: none;">
+                                    Thank you for your message. We'll get back to you soon!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Contact Information and Map -->
+                    <div class="col-lg-6">
+                        <div class="card shadow-sm h-100">
+                            <div class="card-body p-4">
+                                <h2 class="card-title mb-4 fw-bold" data-aos="fade-up">Contact Information</h2>
+                                <ul class="list-unstyled contact-info">
+                                    <li class="mb-4 d-flex align-items-center" data-aos="fade-up" data-aos-delay="100">
+                                        <div class="icon-circle bg-primary text-white me-3">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Address</h5>
+                                            <p class="mb-0">Mpaka House - Nairobi, Kenya</p>
+                                        </div>
+                                    </li>
+                                    <li class="mb-4 d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
+                                        <div class="icon-circle bg-primary text-white me-3">
+                                            <i class="bi bi-telephone-fill"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Phone</h5>
+                                            <p class="mb-0">+254 712 885 069</p>
+                                        </div>
+                                    </li>
+                                    <li class="mb-4 d-flex align-items-center" data-aos="fade-up" data-aos-delay="300">
+                                        <div class="icon-circle bg-primary text-white me-3">
+                                            <i class="bi bi-envelope-fill"></i>
+                                        </div>
+                                        <div>
+                                            <h5 class="mb-1">Email</h5>
+                                            <p class="mb-0">info@asiaafrika.org</p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <div class="map-container mt-4 rounded overflow-hidden" data-aos="fade-up"
+                                    data-aos-delay="400">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.8176744277105!2d36.81679661475403!3d-1.2833309990629387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d22f28f0c1%3A0x7f6d6a0f6b2f3b0!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1625147124367!5m2!1sen!2sus"
+                                        width="100%" height="300" style="border:0;" allowfullscreen=""
+                                        loading="lazy"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button"><i
                 class="bi bi-arrow-up"></i>
@@ -118,6 +344,8 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+
 </body>
 
 </html>
