@@ -1,15 +1,16 @@
 /**
  * Gallery functionality for the Asia Africa Chamber of Commerce website.
- * This script handles image loading, layout, filtering, search, and full image display.
+ * This script handles image loading, layout, filtering, and full image display.
  */
 
 document.addEventListener('DOMContentLoaded', function() {
     // DOM element references
     const gallery = document.getElementById('gallery');
-    const modal = document.getElementById('imageModal');
+    const modal = new bootstrap.Modal(document.getElementById('imageModal'));
     const modalImage = document.getElementById('modalImage');
     const modalTitle = document.getElementById('imageModalLabel');
 
+    /** @type {Array} Array to store gallery items */
     let galleryItems = [];
 
     /**
@@ -71,15 +72,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const item = galleryItems[index];
         modalImage.src = item.image;
         modalTitle.textContent = item.title;
-        modal.classList.add('show');
-        modal.style.display = 'block';
+        modal.show();
     }
 
     /**
-     * Event listener to close the modal
+     * Initializes filter functionality for the gallery
+     * Note: This function is called but not defined in the provided code
      */
-    modal.querySelector('.btn-close').addEventListener('click', function() {
-        modal.classList.remove('show');
-        modal.style.display = 'none';
-    });
+    function initializeFilters() {
+        // Implementation for filters should be added here
+    }
 });
