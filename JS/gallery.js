@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
      */
     function renderGallery(items) {
         gallery.innerHTML = items.map((item, index) => `
-            <div class="col-md-4 col-sm-6 gallery-item ${item.category}" data-category="${item.category}">
+            <div class="col-md-3 col-sm-6 gallery-item ${item.category}" data-category="${item.category}">
                 <div class="image-container">
                     <img src="${item.image}" alt="${item.title}" class="img-fluid rounded" data-index="${index}">
                 </div>
