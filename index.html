@@ -500,37 +500,11 @@
         </section>
 
         <!-- CONTINENTS ANIMATION  -->
-        <section class="container">
-            <div class="row my-5 py-5">
-                <div class="col-12 text-center">
-                    <svg width="100%" height="200" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="connectionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                                <stop offset="0%" style="stop-color: #4caf50; stop-opacity: 1" />
-                                <stop offset="100%" style="stop-color: #2196f3; stop-opacity: 1" />
-                            </linearGradient>
-                        </defs>
-                        <path d="M50,100 Q400,50 750,100" stroke="url(#connectionGradient)" stroke-width="4"
-                            fill="none">
-                            <animate attributeName="d" dur="5s" repeatCount="indefinite" values="M50,100 Q400,50 750,100;
-                                                     M50,100 Q400,150 750,100;
-                                                     M50,100 Q400,50 750,100" />
-                        </path>
-                        <circle cx="50" cy="100" r="10" fill="#4CAF50">
-                            <animate attributeName="r" dur="2s" repeatCount="indefinite" values="10;15;10" />
-                        </circle>
-                        <text x="50" y="130" text-anchor="middle" fill="#333">
-                            Asia
-                        </text>
-                        <circle cx="750" cy="100" r="10" fill="#2196F3">
-                            <animate attributeName="r" dur="2s" repeatCount="indefinite" values="10;15;10" />
-                        </circle>
-                        <text x="750" y="130" text-anchor="middle" fill="#333">
-                            Africa
-                        </text>
-                    </svg>
-                </div>
-            </div>
+        <section id="global-connections" class="py-5"></section>
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold">Connecting Continents</h2>
+            <div id="connection-animation" class="position-relative" style="height: 400px;"></div>
+        </div>
         </section>
 
         <!-- OUR JOURNEY AND GOAL SECTION  -->
@@ -707,6 +681,7 @@
     <script src="js/map.js"></script>
     <script src="js/social-feed.js"></script>
     <script src="js/upcomingEvents.js"></script>
+    <script src="js/global-connections.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/controls/OrbitControls.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
