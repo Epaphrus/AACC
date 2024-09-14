@@ -247,88 +247,39 @@ svg {
 
 /* UPCOMING EVENT INDEX.HTML */
 .event-card {
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease-in-out;
 }
 
 .event-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
 }
 
-.event-card .btn {
-    transition: all 0.3s ease;
-}
-
-.event-card:hover .btn {
-    background-color: #0056b3;
-    border-color: #0056b3;
+.event-card .card-header {
+    background: linear-gradient(45deg, #007bff, #00bcd4);
 }
 
 .countdown {
-    display: flex;
-    justify-content: space-around;
-    margin: 10px 0;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 .countdown-item {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
     font-weight: bold;
     color: #007bff;
 }
 
-.event-card {
-    transition: all 0.3s ease;
-    background: linear-gradient(135deg, #6dd5ed, #2193b0);
+.social-share .btn {
+    width: 35px;
+    height: 35px;
+    padding: 6px 0;
     border: none;
-}
-
-.event-card .card-body {
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 8px;
-}
-
-.event-card .card-title {
-    color: #2193b0;
-}
-
-.event-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(33, 147, 176, 0.3);
-}
-
-.event-card .btn-primary {
-    background-color: #2193b0;
-    border-color: #2193b0;
+    font-size: 1rem;
     transition: all 0.3s ease;
 }
 
-.event-card:hover .btn-primary {
-    background-color: #1c7d98;
-    border-color: #1c7d98;
-}
-
-/* .countdown-item {
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #2193b0;
-} */
-.event-category {
-    display: inline-block;
-    padding: 4px 8px;
-    background-color: #2193b0;
+.social-share .btn:hover {
+    background-color: #007bff;
     color: white;
-    font-size: 0.8rem;
-    font-weight: bold;
-    border-radius: 4px;
-    text-transform: uppercase;
 }
-
-.event-icon {
-    font-size: 1.5rem;
-    color: #2193b0;
-}
-
-
-
-
-
