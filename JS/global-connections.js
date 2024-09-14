@@ -1,7 +1,8 @@
 /**
  * global-connections.js
  * This script creates an interactive animation representing the connections
- * between Africa, the Middle East, and Asia, including animated industry icons.
+ * between Africa, the Middle East, and Asia, including animated industry icons
+ * and a stylized world map background.
  */
 
 // Configuration for the animation
@@ -23,7 +24,8 @@ const config = {
         { name: 'finance', icon: '💰' },
         { name: 'energy', icon: '⚡' },
         { name: 'manufacturing', icon: '🏭' }
-    ]
+    ],
+    mapColor: '#F0F0F0'
 };
 
 /**
@@ -36,6 +38,21 @@ function createSVG() {
     svg.setAttribute('height', '100%');
     svg.setAttribute('viewBox', `0 0 ${config.width} ${config.height}`);
     return svg;
+}
+
+/**
+ * Creates a stylized world map background.
+ * @returns {SVGElement} The created path element for the world map.
+ */
+function createWorldMap() {
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', 'M50,180 Q200,120 400,180 T750,180 M100,100 Q250,150 400,100 T700,100');
+    path.setAttribute('stroke', config.mapColor);
+    path.setAttribute('stroke-width', '30');
+    path.setAttribute('fill', 'none');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('opacity', '0.3');
+    return path;
 }
 
 /**
@@ -133,6 +150,9 @@ function createAnimatedIcon(pathId, industry) {
 function initGlobalConnections() {
     const container = document.getElementById('connection-animation');
     const svg = createSVG();
+
+    // Add world map background
+    svg.appendChild(createWorldMap());
 
     // Create connection lines
     let connectionIndex = 0;
