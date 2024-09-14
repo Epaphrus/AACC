@@ -51,7 +51,7 @@ function createWorldMap() {
     path.setAttribute('stroke-width', '30');
     path.setAttribute('fill', 'none');
     path.setAttribute('stroke-linecap', 'round');
-    path.setAttribute('opacity', '0.3');
+    path.setAttribute('opacity', '0.6');
     return path;
 }
 

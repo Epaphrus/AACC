@@ -50,10 +50,10 @@ am5.ready(function () {
     pointSeries.data.setAll([
         { geometry: { type: "Point", coordinates: [36.8219, -1.2921] }, title: "Nairobi, Kenya" },
         { geometry: { type: "Point", coordinates: [101.6869, 3.1390] }, title: "Kuala Lumpur, Malaysia" },
+        { geometry: { type: "Point", coordinates: [55.2708, 25.2048] }, title: "Dubai, UAE" },
         // Add more locations as needed
     ]);
 
     // Make the map full-screen
     chart.appear(1000, 100);
-
 });
