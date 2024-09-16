@@ -40,6 +40,86 @@
           ]
         }
         </script>
+    <style>
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a237e, #4a148c);
+            z-index: -2;
+        }
+
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+            z-index: -1;
+        }
+
+        .animated-dots {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+            z-index: -1;
+        }
+
+        .hero-image-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .connection-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('images/Hero/Happy.jpg');
+            background-size: cover;
+            opacity: 0.5;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes moveBackground {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 50px 50px;
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 0.5;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -121,7 +201,7 @@
 
     <main>
         <!-- HERO SECTION CODE  -->
-        <section class="hero position-relative overflow-hidden">
+        <!-- <section class="hero position-relative overflow-hidden">
             <div class="container">
                 <div class="row align-items-center my-5 py-3">
                     <div class="col-lg-6">
@@ -170,9 +250,36 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="col-lg-6 ">
-                        <div id="chartdiv"></div>
-                    </div> -->
+                </div>
+            </div>
+        </section> -->
+
+        <section class="hero position-relative overflow-hidden py-5">
+            <div class="hero-background">
+                <div class="gradient-overlay"></div>
+                <div class="animated-dots"></div>
+            </div>
+            <div class="container position-relative">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-lg-2" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="hero-image-container position-relative">
+                            <img src="images/hero/Happy.jpg" class="img-fluid rounded-circle shadow-lg"
+                                alt="Asia and Africa map">
+                            <div class="connection-lines"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-lg-1 py-5" data-aos="fade-right" data-aos-duration="1000">
+                        <h1 class="display-4 fw-bold mb-4 text-white">
+                            <span class="text-primary">Uniting</span> Asia & Africa<br>
+                            <span class="text-secondary">Empowering</span> Business
+                        </h1>
+                        <p class="lead mb-4 text-white">Forge powerful connections, unlock new markets, and drive
+                            sustainable growth across two dynamic continents.</p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="membership.html" class="btn btn-primary btn-lg rounded-pill">Join Our Network</a>
+                            <a href="#benefits" class="btn btn-light btn-lg rounded-pill">Discover Benefits</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
